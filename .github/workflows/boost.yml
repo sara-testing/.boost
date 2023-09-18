@@ -19,12 +19,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          api_endpoint: https://api.dev.boostsec.io
           repository: ${{fromJSON(github.event.inputs.scan_params).repository}}
           token: ${{fromJSON(github.event.inputs.scan_params).token}}
           ref: ${{fromJSON(github.event.inputs.scan_params).branch_name}}
       - name: ${{fromJSON(github.event.inputs.scan_params).scanner_name}}
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
+          api_endpoint: https://api.dev.boostsec.io
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: ${{fromJSON(github.event.inputs.scan_params).registry_module}}
           scan_timeout: ${{ vars.BOOST_DIFF_SCAN_TIMEOUT }}
@@ -47,12 +49,14 @@ jobs:
           repository: ${{fromJSON(github.event.inputs.scan_params).repository}}
           token: ${{fromJSON(github.event.inputs.scan_params).token}}
           ref: ${{fromJSON(github.event.inputs.scan_params).branch_name}}
+          api_endpoint: https://api.dev.boostsec.io
       - name: ${{fromJSON(github.event.inputs.scan_params).scanner_name}}
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: ${{fromJSON(github.event.inputs.scan_params).registry_module}}
           scan_timeout: ${{ vars.BOOST_DIFF_SCAN_TIMEOUT }}
+          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -75,12 +79,14 @@ jobs:
           repository: ${{fromJSON(github.event.inputs.scan_params).repository}}
           token: ${{fromJSON(github.event.inputs.scan_params).token}}
           ref: ${{fromJSON(github.event.inputs.scan_params).branch_name}}
+          api_endpoint: https://api.dev.boostsec.io
       - name: ${{fromJSON(github.event.inputs.scan_params).scanner_name}}
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: ${{fromJSON(github.event.inputs.scan_params).registry_module}}
           scan_timeout: ${{ vars.BOOST_DIFF_SCAN_TIMEOUT }}
+          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -101,12 +107,14 @@ jobs:
           repository: ${{fromJSON(github.event.inputs.scan_params).repository}}
           token: ${{fromJSON(github.event.inputs.scan_params).token}}
           ref: ${{fromJSON(github.event.inputs.scan_params).branch_name}}
+          api_endpoint: https://api.dev.boostsec.io
       - name: ${{fromJSON(github.event.inputs.scan_params).scanner_name}}
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: ${{fromJSON(github.event.inputs.scan_params).registry_module}}
           scan_timeout: ${{ vars.BOOST_DIFF_SCAN_TIMEOUT }}
+          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
@@ -128,12 +136,14 @@ jobs:
           repository: ${{fromJSON(github.event.inputs.scan_params).repository}}
           token: ${{fromJSON(github.event.inputs.scan_params).token}}
           ref: ${{fromJSON(github.event.inputs.scan_params).branch_name}}
+          api_endpoint: https://api.dev.boostsec.io
       - name: ${{fromJSON(github.event.inputs.scan_params).scanner_name}}
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: ${{fromJSON(github.event.inputs.scan_params).registry_module}}
           scan_timeout: ${{ vars.BOOST_DIFF_SCAN_TIMEOUT }}
+          api_endpoint: https://api.dev.boostsec.io
         env:
           BOOST_GIT_HEAD: ${{fromJSON(github.event.inputs.scan_params).head_sha}}
           BOOST_GIT_BASE: ${{fromJSON(github.event.inputs.scan_params).base_sha}}
